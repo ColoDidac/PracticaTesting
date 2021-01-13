@@ -8,7 +8,8 @@ public class TestDigitalSign1 {
 
     @Test
     void provaSenseArg(){
-        byte[] baits = {1, 0, 1, 0};
+        String signatura = "miraQueFirma";
+        byte[] baits = signatura.getBytes();
         DigitalSignature sign = new DigitalSignature(baits);
         assertEquals("HealthCardID{" + "personal code='" + baits + '\'' + '}', sign.toString());
         //assertEquals(new IllegalArgumentException("falta un argument"), new DigitalSignature());
