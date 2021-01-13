@@ -23,5 +23,9 @@ final public class DigitalSignature {
         return "HealthCardID{" + "personal code='" + doctorSignature + '\'' + '}';
 }
 
+    public int proba(){
+        return 5;
+    }
+
 }
 

@@ -9,9 +9,10 @@ public class TestDigitalSign1 {
     @Test
     void provaSenseArg(){
         String signatura = "miraQueFirma";
-        byte[] baits = signatura.getBytes();
+        byte baits[] = signatura.getBytes();
         DigitalSignature sign = new DigitalSignature(baits);
-        assertEquals("HealthCardID{" + "personal code='" + baits + '\'' + '}', sign.toString());
+        assertEquals(5, sign.proba());
+        //assertEquals("HealthCardID{" + "personal code='" + baits + '\'' + '}', sign.toString());
         //assertEquals(new IllegalArgumentException("falta un argument"), new DigitalSignature());
     }
 }
