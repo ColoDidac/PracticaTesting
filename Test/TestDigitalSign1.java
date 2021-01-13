@@ -8,7 +8,9 @@ public class TestDigitalSign1 {
 
     @Test
     void provaSenseArg(){
-        DigitalSignature sign = new DigitalSignature();
-        assertEquals(new IllegalArgumentException("falta un argument"), new DigitalSignature());
+        byte[] baits = {1, 0, 1, 0};
+        DigitalSignature sign = new DigitalSignature(baits);
+        assertEquals("HealthCardID{" + "personal code='" + baits + '\'' + '}', sign.toString());
+        //assertEquals(new IllegalArgumentException("falta un argument"), new DigitalSignature());
     }
 }
