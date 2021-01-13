@@ -12,7 +12,6 @@ class DigitalSignatureTest {
         byte papaya[] = "SignaGuay".getBytes();
         DigitalSignature sign = new DigitalSignature(papaya);
         assertEquals("HealthCardID{" + "personal code='" + papaya + '\'' + '}', sign.toString());
-        //DigitalSignature signa = new DigitalSignature();
         assertThrows(IllegalArgumentException.class,()->{
             DigitalSignature healthCardID = new DigitalSignature();
         });
