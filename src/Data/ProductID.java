@@ -1,21 +1,21 @@
 package Data;
 
 final public class ProductID {
-    private final String ProductID;
-    public ProductID(String code) { this.ProductID = code; }
-    public String getPersonalID() { return ProductID; }
+    private final String productID;
+    public ProductID(String code) { this.productID = code; }
+    public String getPersonalID() { return productID; }
 
     @Override
     public boolean equals(Object o){
         if( this == o) return true;
         if(o == null|| this.getClass() !=o.getClass()) return false;
         ProductID product = (ProductID) o;
-        return ProductID.equals(product.ProductID);
+        return productID.equals(product.productID);
     }
-    public int hashCode(){return ProductID.hashCode();}
+    public int hashCode(){return productID.hashCode();}
 
     public String toString(){
-        return "ProductID{"+ "personal code='" + ProductID + '\'' + '}';
+        return "productID{"+ "personal code='" + productID + '\'' + '}';
     }
 
 
