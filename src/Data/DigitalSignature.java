@@ -5,7 +5,7 @@ final public class DigitalSignature {
     private final byte[] doctorSignature;
 
     public DigitalSignature(byte[] code) { this.doctorSignature = code; }
-    public DigitalSignature(){throw new IllegalArgumentException("falte un argument"); }
+    public DigitalSignature(){throw new IllegalArgumentException("falta un argument"); }
     public byte[] getdoctorSignature() { return doctorSignature; }
 
     @Override
