@@ -13,7 +13,9 @@ class DigitalSignatureTest {
         DigitalSignature sign = new DigitalSignature(papaya);
         assertEquals("HealthCardID{" + "personal code='" + papaya + '\'' + '}', sign.toString());
         //DigitalSignature signa = new DigitalSignature();
-        assertEquals(new IllegalArgumentException("falta un argument"), new DigitalSignature());
+        assertThrows(IllegalArgumentException.class,()->{
+            DigitalSignature healthCardID = new DigitalSignature();
+        });
     }
 
 }
