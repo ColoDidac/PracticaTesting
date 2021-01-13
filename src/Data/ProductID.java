@@ -2,8 +2,7 @@ package Data;
 
 final public class ProductID {
     private final String productID;
-    public ProductID(String code) { this.productID = code; }
-    public ProductID(){throw new IllegalArgumentException("Falte el ProductID"); }
+    public ProductID(String code) throws Exception { this.productID = code; if (code==null || (code instanceof String)==false){throw new IllegalArgumentException(" No correct Code");}}
     public String getPersonalID() { return productID; }
 
     @Override

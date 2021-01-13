@@ -11,25 +11,33 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProductIDTest {
     private ProductID product;
     @BeforeEach
-    void setStuff(){
+    void setStuff() throws Exception {
         product=new ProductID("1234");
     }
     @Test
     void testGetProductID(){
         String code=product.getPersonalID();
         assertEquals("1234",code);
-
+    }
+    @Test
+    void emptyConstructor(){
+        assertThrows(IllegalArgumentException.class, ()->{ ProductID emptyProduct= new ProductID(null);});
     }
 
-    @org.junit.jupiter.api.Test
-    void testEquals() {
+
+    @Test
+    void testEquals() throws Exception {
+        String code= product.getPersonalID();
+        ProductID equalProduct= new ProductID(code);
+        assert(product.equals(equalProduct));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testHashCode() {
+        ProductID sameProduct=product;
+        assertEquals(sameProduct.hashCode(),product.hashCode());
+
     }
 
-    @org.junit.jupiter.api.Test
-    void testToString() {
-    }
+    
 }
